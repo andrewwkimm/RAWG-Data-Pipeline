@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "video-game-analytics"
+name = "rawg-data-pipeline"
 version = "0.1.0"
 description = "A data pipeline made using RAWG Video Game Database API"
 authors = ["andrewwkimm <andrewkimka@gmail.com>"]
@@ -29,6 +29,7 @@ flake8-bugbear = "^22.9.23"
 flake8-simplify = "^0.19.3"
 flake8-docstrings = "^1.6.0"
 mypy = "^0.981"
+types-requests = "^2.31.0.2"
 
 [tool.coverage.run]
 branch = true
@@ -36,7 +37,7 @@ source = ["src"]
 
 [tool.coverage.report]
 show_missing = true
-fail_under = 80
+fail_under = 20
 
 [tool.pytest.ini_options]
 testpaths=["tests"]

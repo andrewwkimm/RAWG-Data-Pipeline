@@ -21,7 +21,7 @@ def extract_all_data_from_response(
     """Extracts data from the API."""
     log.info("Extracting data.")
 
-    data = []
+    all_data = []
 
     for i in range(len(dates)):
         params["dates"] = dates[i] + "," + dates[i]
@@ -29,13 +29,13 @@ def extract_all_data_from_response(
         while True:
             response = requests.get(url, params=params)
             try:
-                response = response.json()
-                data.extend(response["results"])
+                data = response.json()
+                all_data.extend(data["results"])
                 params["page"] += 1
             except (KeyError, ValueError):
                 break
 
-    return data
+    return all_data
 
 
 def parse_data_from_response(response: list) -> pd.DataFrame:

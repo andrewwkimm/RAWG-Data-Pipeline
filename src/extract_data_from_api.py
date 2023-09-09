@@ -16,70 +16,59 @@ log = logging.getLogger(__name__)
 def extract_all_data_from_response(
     url: str,
     params: dict,
+    dates: list,
 ) -> list:
     """Extracts data from the API."""
     log.info("Extracting data.")
 
-    all_data = []
+    data = []
 
-    while True:
-        response = requests.get(url, params=params)
-        print(params["page"])
-        try:
-            data = response.json()
-            all_data.extend(data["results"])
-            params["page"] += 1
-        except KeyError:
-            print(params["page"])
-            break
+    for i in range(len(dates)):
+        params["dates"] = dates[i] + "," + dates[i]
+        params["page"] = 1
+        while True:
+            response = requests.get(url, params=params)
+            try:
+                response = response.json()
+                data.extend(response["results"])
+                params["page"] += 1
+            except (KeyError, ValueError):
+                break
 
-    return all_data
+    return data
 
 
-def parse_api_data(response: list) -> pd.DataFrame:
+def parse_data_from_response(response: list) -> pd.DataFrame:
     """Parses the response into a dataframe."""
     log.info("Parsing data.")
 
     names = []
     release_dates = []
-    genres_list = []
+    genres = []
     ratings = []
-    prices = []
     game_ids = []
     playtimes = []
-    platforms_list = []
 
     for game in response:
-        if not contains_non_english_chars(game["name"]):
+        if not contains_non_english_chars(game["name"]) and game["rating"] != 0:
             names.append(game["name"])
             try:
-                genres = [genre["name"] for genre in game["genres"]]
-            except TypeError:
-                genres = []
-            genres_list.append(genres)
+                genres.append(game["genres"][0]["name"])
+            except IndexError:
+                genres.append("N/A")
             release_dates.append(game["released"])
-            ratings.append(game["rating"])
-            prices.append(game.get("price", "N/A"))
             game_ids.append(game["id"])
+            ratings.append(game["rating"])
             playtimes.append(game.get("playtime", "N/A"))
-            try:
-                platforms = [
-                    platform["platform"]["name"] for platform in game["platforms"]
-                ]
-            except TypeError:
-                platforms = []
-            platforms_list.append(platforms)
 
     data = pd.DataFrame(
         {
             "name": names,
             "release_date": release_dates,
-            "genres": genres_list,
+            "genre": genres,
             "rating": ratings,
-            "price": prices,
             "game_id": game_ids,
             "playtime": playtimes,
-            "platforms": platforms_list,
         }
     )
     data = data.sort_values(by=["release_date", "name"])
@@ -102,7 +91,8 @@ def write_data_to_disk(data: pd.DataFrame) -> None:
 
 
 if __name__ == "__main__":
-    args = initialize_arguements()
-    response = extract_all_data_from_response(args["url"], args["params"])
-    data = parse_api_data(response)
+    url, params, dates = initialize_arguements()
+    response = extract_all_data_from_response(url, params, dates)
+    data = parse_data_from_response(response)
     write_data_to_disk(data)
+    print("Success.")

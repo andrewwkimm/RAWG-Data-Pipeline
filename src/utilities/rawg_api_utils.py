@@ -1,7 +1,7 @@
 """Utilities for processing RAWG's API."""
 
 import os
-from typing import Tuple, Dict, List
+from typing import Tuple
 from datetime import date, datetime, timedelta
 
 
@@ -24,20 +24,17 @@ def get_dates_from_two_weeks_ago(today: date) -> list:
     return dates
 
 
-def initialize_arguements() -> Tuple[Dict[str, str], List[str]]:
+def initialize_arguements() -> Tuple[str, dict, list]:
     """Initializes arguements to pass onto requests."""
     API_KEY = os.getenv("API_KEY")
     today = datetime.now().date()
 
     dates = get_dates_from_two_weeks_ago(today)
-
-    args = {
-        "url": "https://api.rawg.io/api/games",
-        "params": {
-            "key": API_KEY,
-            "ordering": "-added",
-            "page_size": 40,  # Max amount that can be set
-            "page": 1,
-        },
+    url = "https://api.rawg.io/api/games"
+    params = {
+        "key": API_KEY,
+        "ordering": "-added",
+        "page_size": 40,  # Max amount that can be set
+        "page": 1,
     }
-    return args, dates
+    return url, params, dates

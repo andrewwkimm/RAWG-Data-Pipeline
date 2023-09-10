@@ -15,3 +15,6 @@ __pycache__
 
 # Exclusions
 !/scratch/README.md
+
+# Secrets
+gcp-service-key.json

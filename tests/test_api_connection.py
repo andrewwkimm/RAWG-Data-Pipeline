@@ -1,4 +1,5 @@
 """Tests if the API can be connected successfully."""
+
 import requests
 from src.utilities.rawg_api_utils import initialize_arguements
 

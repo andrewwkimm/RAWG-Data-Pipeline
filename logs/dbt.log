@@ -1,0 +1,235 @@
+[0m21:45:36.954149 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8638c2520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb861dde040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb86438f940>]}
+
+
+============================== 21:45:36.991044 | eac13c46-b8ad-46af-9919-c2073fdc3e2e ==============================
+[0m21:45:36.991044 [info ] [MainThread]: Running with dbt=1.6.2
+[0m21:45:36.992445 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vscode/.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt init dbt', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m21:45:36.993809 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse dict {'dir': PosixPath('/home/vscode/.dbt')}
+[0m21:45:36.994892 [info ] [MainThread]: Creating dbt configuration folder at
+[0m21:45:52.913404 [error] [MainThread]: Encountered an error:
+
+[0m21:45:52.917273 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/dbt/cli/requires.py", line 87, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/dbt/cli/requires.py", line 72, in wrapper
+    return func(*args, **kwargs)
+  File "/home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/dbt/cli/main.py", line 468, in init
+    results = task.run()
+  File "/home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/dbt/task/init.py", line 283, in run
+    project_name = self.get_valid_project_name()
+  File "/home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/dbt/task/init.py", line 246, in get_valid_project_name
+    name = click.prompt("Enter a name for your project (letters, digits, underscore)")
+  File "/home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/click/termui.py", line 164, in prompt
+    value = prompt_func(prompt)
+  File "/home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/click/termui.py", line 147, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m21:45:52.919343 [debug] [MainThread]: Command `dbt init` failed at 21:45:52.918769 after 15.98 seconds
+[0m21:45:52.920293 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8638c2520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb86438fb50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb86438f940>]}
+[0m21:45:52.921250 [debug] [MainThread]: Flushing usage events
+[0m21:48:31.987410 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdc9eb5c7f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdc9b570fa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdc9b547b50>]}
+
+
+============================== 21:48:31.993910 | cd96d92f-f309-47f4-8c3b-bf7711bf2aeb ==============================
+[0m21:48:31.993910 [info ] [MainThread]: Running with dbt=1.6.2
+[0m21:48:31.995240 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/home/vscode/.dbt', 'log_path': 'logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt init rawg-data-models', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m21:48:40.345726 [debug] [MainThread]: Starter project path: /home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/dbt/include/starter_project
+[0m21:48:40.359875 [info ] [MainThread]:
+Your new dbt project "rawg" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m21:48:40.360991 [info ] [MainThread]: Setting up your profile.
+[0m21:50:10.624893 [info ] [MainThread]: Profile rawg written to /home/vscode/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m21:50:10.626668 [debug] [MainThread]: Command `dbt init` succeeded at 21:50:10.626402 after 98.65 seconds
+[0m21:50:10.627653 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdc9eb5c7f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdc9b4cc280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdc9b547f70>]}
+[0m21:50:10.628720 [debug] [MainThread]: Flushing usage events
+[0m22:07:47.706348 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f028f2667f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f028e75c8b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f028bc51ac0>]}
+
+
+============================== 22:07:47.712811 | 2c3c6687-f14b-4d01-905e-f724a00c9271 ==============================
+[0m22:07:47.712811 [info ] [MainThread]: Running with dbt=1.6.2
+[0m22:07:47.714060 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': '/home/vscode/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'invocation_command': 'dbt init dbt', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:07:47.715200 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse dict {'dir': PosixPath('/home/vscode/.dbt')}
+[0m22:07:47.716152 [info ] [MainThread]: Creating dbt configuration folder at
+[0m22:09:19.070984 [error] [MainThread]: Encountered an error:
+
+[0m22:09:19.075066 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/dbt/cli/requires.py", line 87, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/dbt/cli/requires.py", line 72, in wrapper
+    return func(*args, **kwargs)
+  File "/home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/dbt/cli/main.py", line 468, in init
+    results = task.run()
+  File "/home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/dbt/task/init.py", line 283, in run
+    project_name = self.get_valid_project_name()
+  File "/home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/dbt/task/init.py", line 246, in get_valid_project_name
+    name = click.prompt("Enter a name for your project (letters, digits, underscore)")
+  File "/home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/click/termui.py", line 164, in prompt
+    value = prompt_func(prompt)
+  File "/home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/click/termui.py", line 147, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m22:09:19.077129 [debug] [MainThread]: Command `dbt init` failed at 22:09:19.076768 after 91.38 seconds
+[0m22:09:19.078092 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f028f2667f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f028bc51a00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f028bc517f0>]}
+[0m22:09:19.079086 [debug] [MainThread]: Flushing usage events
+[0m22:09:31.948957 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f17868c5460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1785dbb8b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f17832b0b50>]}
+
+
+============================== 22:09:31.955818 | 7f5c1bb8-4850-4487-b371-a8e90d97c394 ==============================
+[0m22:09:31.955818 [info ] [MainThread]: Running with dbt=1.6.2
+[0m22:09:31.957084 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/home/vscode/.dbt', 'log_path': 'logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt init rawg_data_models', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m22:09:31.959289 [debug] [MainThread]: Starter project path: /home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/dbt/include/starter_project
+[0m22:09:31.973348 [info ] [MainThread]:
+Your new dbt project "rawg_data_models" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:09:31.974505 [info ] [MainThread]: Setting up your profile.
+[0m22:11:19.423919 [info ] [MainThread]: Profile rawg_data_models written to /home/vscode/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m22:11:19.425666 [debug] [MainThread]: Command `dbt init` succeeded at 22:11:19.425408 after 107.49 seconds
+[0m22:11:19.426612 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f17868c5460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1785de5820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f176b52cd60>]}
+[0m22:11:19.427632 [debug] [MainThread]: Flushing usage events
+[0m22:15:20.725448 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7c2cc17460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7c29610370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7c29610250>]}
+
+
+============================== 22:15:20.731817 | 4d7a1c46-6962-4256-99fd-97bdae5750ec ==============================
+[0m22:15:20.731817 [info ] [MainThread]: Running with dbt=1.6.2
+[0m22:15:20.733112 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vscode/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m22:15:20.734482 [info ] [MainThread]: dbt version: 1.6.2
+[0m22:15:20.735408 [info ] [MainThread]: python version: 3.9.17
+[0m22:15:20.736285 [info ] [MainThread]: python path: /home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/bin/python
+[0m22:15:20.737166 [info ] [MainThread]: os info: Linux-5.15.90.1-microsoft-standard-WSL2-x86_64-with-glibc2.31
+[0m22:15:21.863931 [info ] [MainThread]: Using profiles dir at /home/vscode/.dbt
+[0m22:15:21.865047 [info ] [MainThread]: Using profiles.yml file at /home/vscode/.dbt/profiles.yml
+[0m22:15:21.865979 [info ] [MainThread]: Using dbt_project.yml file at /workspaces/RAWG-Data-Pipeline/dbt_project.yml
+[0m22:15:21.869675 [info ] [MainThread]: adapter type: bigquery
+[0m22:15:21.870599 [info ] [MainThread]: adapter version: 1.6.4
+[0m22:15:21.871495 [info ] [MainThread]: Configuration:
+[0m22:15:21.872363 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m22:15:21.873216 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m22:15:21.874090 [info ] [MainThread]: Required dependencies:
+[0m22:15:21.874975 [debug] [MainThread]: Executing "git --help"
+[0m22:15:21.886539 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m22:15:21.887979 [debug] [MainThread]: STDERR: "b''"
+[0m22:15:21.888954 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m22:15:21.889921 [info ] [MainThread]: Connection:
+[0m22:15:21.890988 [info ] [MainThread]:   method: service-account
+[0m22:15:21.891900 [info ] [MainThread]:   database: rawg-data-pipeline
+[0m22:15:21.892794 [info ] [MainThread]:   execution_project: rawg-data-pipeline
+[0m22:15:21.893694 [info ] [MainThread]:   schema: video_game_dataset
+[0m22:15:21.894601 [info ] [MainThread]:   location: US
+[0m22:15:21.895470 [info ] [MainThread]:   priority: interactive
+[0m22:15:21.896326 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m22:15:21.897196 [info ] [MainThread]:   impersonate_service_account: None
+[0m22:15:21.898058 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m22:15:21.898972 [info ] [MainThread]:   job_retries: 1
+[0m22:15:21.899849 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m22:15:21.900722 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m22:15:21.901596 [info ] [MainThread]:   keyfile: gcp-service-key.json
+[0m22:15:21.902487 [info ] [MainThread]:   timeout_seconds: 300
+[0m22:15:21.903403 [info ] [MainThread]:   refresh_token: None
+[0m22:15:21.904295 [info ] [MainThread]:   client_id: None
+[0m22:15:21.905158 [info ] [MainThread]:   token_uri: None
+[0m22:15:21.905998 [info ] [MainThread]:   dataproc_region: None
+[0m22:15:21.906874 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m22:15:21.907750 [info ] [MainThread]:   gcs_bucket: None
+[0m22:15:21.908672 [info ] [MainThread]:   dataproc_batch: None
+[0m22:15:21.909990 [info ] [MainThread]: Registered adapter: bigquery=1.6.4
+[0m22:15:21.912310 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m22:15:21.913437 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:15:22.020285 [debug] [MainThread]: On debug: select 1 as id
+[0m22:15:23.052284 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=rawg-data-pipeline&j=bq:US:104c19c5-968c-4480-a61f-801ce04db48b&page=queryresults
+[0m22:15:23.554918 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m22:15:23.556037 [info ] [MainThread]: [31m1 check failed:[0m
+[0m22:15:23.557037 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </workspaces/RAWG-Data-Pipeline/dbt_project.yml> not found
+
+[0m22:15:23.558690 [debug] [MainThread]: Command `dbt debug` failed at 22:15:23.558438 after 2.85 seconds
+[0m22:15:23.559693 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m22:15:23.560752 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7c2cc17460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7c118728b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7c11895490>]}
+[0m22:15:23.561824 [debug] [MainThread]: Flushing usage events
+[0m22:17:08.291105 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe6456cf7f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe6420c8340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe6420c8370>]}
+
+
+============================== 22:17:08.297561 | 5d5752c9-adba-43b2-ade2-c63225949a02 ==============================
+[0m22:17:08.297561 [info ] [MainThread]: Running with dbt=1.6.2
+[0m22:17:08.298875 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': '/home/vscode/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt init', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:17:13.156478 [error] [MainThread]: Encountered an error:
+
+[0m22:17:13.158760 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/dbt/cli/requires.py", line 87, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/dbt/cli/requires.py", line 72, in wrapper
+    return func(*args, **kwargs)
+  File "/home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/dbt/cli/main.py", line 468, in init
+    results = task.run()
+  File "/home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/dbt/task/init.py", line 283, in run
+    project_name = self.get_valid_project_name()
+  File "/home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/dbt/task/init.py", line 246, in get_valid_project_name
+    name = click.prompt("Enter a name for your project (letters, digits, underscore)")
+  File "/home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/click/termui.py", line 164, in prompt
+    value = prompt_func(prompt)
+  File "/home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/click/termui.py", line 147, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m22:17:13.160389 [debug] [MainThread]: Command `dbt init` failed at 22:17:13.160096 after 4.89 seconds
+[0m22:17:13.161312 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe6456cf7f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe6420ba820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe6420c85e0>]}
+[0m22:17:13.162258 [debug] [MainThread]: Flushing usage events
+[0m22:47:30.254280 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f904504f3a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9045b8f880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f90430d2a90>]}
+
+
+============================== 22:47:30.261138 | f914b3f9-ceaa-4d03-8981-7d55ba2928eb ==============================
+[0m22:47:30.261138 [info ] [MainThread]: Running with dbt=1.6.2
+[0m22:47:30.262387 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'profiles_dir': '/home/vscode/.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt init rawg-data-models', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:47:30.263581 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse dict {'dir': PosixPath('/home/vscode/.dbt')}
+[0m22:47:30.264485 [info ] [MainThread]: Creating dbt configuration folder at
+[0m22:47:42.557502 [debug] [MainThread]: Starter project path: /home/vscode/.cache/pypoetry/virtualenvs/video-game-analytics-XoT9ZA8s-py3.9/lib/python3.9/site-packages/dbt/include/starter_project
+[0m22:47:42.568277 [info ] [MainThread]:
+Your new dbt project "rawg_data_models" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:47:42.569307 [info ] [MainThread]: Setting up your profile.
+[0m22:48:12.138939 [info ] [MainThread]: Profile rawg_data_models written to /home/vscode/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m22:48:12.140721 [debug] [MainThread]: Command `dbt init` succeeded at 22:48:12.140318 after 41.89 seconds
+[0m22:48:12.141640 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f904504f3a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9045b7e850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f902b34af10>]}
+[0m22:48:12.142604 [debug] [MainThread]: Flushing usage events

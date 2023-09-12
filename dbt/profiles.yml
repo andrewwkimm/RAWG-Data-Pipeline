@@ -1,0 +1,14 @@
+rawg_data_models:
+  outputs:
+    dev:
+      dataset: video_game_dataset
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: ../gcp-service-key.json
+      location: us-east1
+      method: service-account
+      priority: interactive
+      project: rawg-data-pipeline
+      threads: 4
+      type: bigquery
+  target: dev

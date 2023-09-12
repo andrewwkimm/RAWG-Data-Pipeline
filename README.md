@@ -8,7 +8,7 @@ A data pipeline I am working on made using RAWG's Database API to explore trends
 The pipeline is orchestrated by Airflow in the following steps:
 1. The data is extracted and parsed from RAWG's API
 2. A connection to Google Storage is programmatically made to load the data into it
-3. Dataprocs runs a PySpark cluster to process the data in Google Storage to BigQuery
+3. Data modeling is done through dbt for use in Big Query
 4. Streamlit connects to BigQuery to and visualizes the data
 
 Terraform will be used to manage the Google Cloud Platform infrastructure while Docker will containerize the above steps.

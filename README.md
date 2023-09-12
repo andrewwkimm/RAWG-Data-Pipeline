@@ -5,7 +5,7 @@ A data pipeline I am working on made using RAWG's Database API to explore trends
 
 ![pipeline](images/architecture.png)
 
-The pipeline is orchestrated by Airflow in the following steps:
+The pipeline is orchestrated by Prefect in the following steps:
 1. The data is extracted and parsed from RAWG's API
 2. A connection to Google Storage is programmatically made to load the data into it
 3. Data modeling is done through dbt for use in Big Query
@@ -29,7 +29,7 @@ Set the environment variable for the API key in the terminal. You'll have to reg
 ```
 $ export API_KEY="enter-your-key-here"
 ```
-The next steps will be building out the infrastructure with Terraform and running Airflow which are still in development but coming soon!
+The next steps will be building out the infrastructure with Terraform and running Prefect which are still in development but coming soon!
 
 For now, though, a prototype web app is available using the sample data.
 ```

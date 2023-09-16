@@ -18,10 +18,9 @@ def add_dates_to_dataframe(data: pd.DataFrame) -> pd.DataFrame:
     data["month"] = data["release_date"].dt.strftime("%B")
     data["week"] = data["release_date"].dt.to_period("W-SAT").dt.start_time
 
-    # Format dates to datetime mm-dd-yyyy
-    data["release_date"] = pd.to_datetime(data["release_date"].dt.strftime("%m-%d-%Y"))
-    data["week"] = pd.to_datetime(data["week"], format="%m-%d-%Y")
-
+    # Format dates to datetime mm/dd/yyyy
+    data["release_date"] = data["release_date"].dt.strftime("%-m/%-d/%Y")
+    data["week"] = pd.to_datetime(data["week"]).dt.strftime("%-m/%-d/%Y")
     return data
 
 

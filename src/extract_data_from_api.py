@@ -1,7 +1,6 @@
 """Extract and parse the data into tabular form."""
 
 import logging
-from pathlib import Path
 
 import pandas as pd
 import requests
@@ -75,24 +74,8 @@ def parse_data_from_response(response: list) -> pd.DataFrame:
     return data
 
 
-def write_data_to_disk(data: pd.DataFrame) -> None:
-    """Save the DataFrame as a .csv file."""
-    log.info("Writing to disk.")
-
-    file_path = Path("data")
-    file_name = "video_game_data.csv"
-    csv_path = file_path / file_name
-    if csv_path.exists():
-        data.to_csv(csv_path, mode="a", header=False, index=False)
-    else:
-        data.to_csv(csv_path, index=False)
-
-    log.info("Successfully wrote to disk.")
-
-
 if __name__ == "__main__":
     url, params, dates = initialize_arguements()
     response = extract_all_data_from_response(url, params, dates)
     data = parse_data_from_response(response)
-    write_data_to_disk(data)
     print("Success.")

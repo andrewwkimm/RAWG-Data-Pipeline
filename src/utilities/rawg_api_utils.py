@@ -26,7 +26,7 @@ def add_dates_to_dataframe(data: pd.DataFrame) -> pd.DataFrame:
 
 
 def write_data_to_disk(data: pd.DataFrame) -> None:
-    """Save the DataFrame as a .csv file."""
+    """Saves the DataFrame as a .csv file."""
     log.info("Writing to disk.")
 
     file_path = Path("data")
@@ -41,7 +41,7 @@ def write_data_to_disk(data: pd.DataFrame) -> None:
 
 
 def contains_non_english_chars(text: str) -> bool:
-    """Checks for non alphanumeric characters."""
+    """Checks for non-alphanumeric characters."""
     return not all(ord(char) < 128 for char in text)
 
 

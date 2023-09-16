@@ -81,6 +81,6 @@ if __name__ == "__main__":
     raw_data = parse_data_from_response(response)
     data = add_dates_to_dataframe(raw_data)
     bucket_name = "rawg-data-pipeline-bucket"
-    blob_name = "test"
+    blob_name = "video_game_data"
     upload_data_to_google_storage(data, bucket_name, blob_name)
     print("Success.")

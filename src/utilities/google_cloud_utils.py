@@ -21,26 +21,25 @@ def upload_data_to_google_storage(
     print(f"Uploaded data to gs://{bucket_name}/{blob_name}")
 
 
-def create_external_connection_from_storage_to_bigquery_table(
-    query: str,
-    schema: list,
+def load_storage_data_to_bigquery_table(
+    schema: list[bigquery.SchemaField],
     project_id: str,
     dataset_id: str,
     table_id: str,
+    gcs_uri: str,
     location: str,
 ) -> None:
-    """Creates external connection to load data from storage into a BigQuery table."""
+    """Loads the uploaded data in Google Cloud Storage to a BigQuery table."""
     client = bigquery.Client(location=location)
-    dataset_ref = bigquery.DatasetReference(client.project, dataset_id)
-    external_config = bigquery.ExternalConfig("CSV")
-    external_config.source_uris = [f"gs://{project_id}/{table_id}.csv"]
-    external_config.schema = schema
-    external_config.csv_options.skip_leading_rows = 1
 
-    table_ref = bigquery.Table(dataset_ref.table(table_id))
-    table_ref.external_data_configuration = external_config
+    table_ref = client.dataset(dataset_id, project=project_id).table(table_id)
 
-    client.create_table(table_ref)
-    client.query(query)
+    job_config = bigquery.LoadJobConfig(
+        source_format=bigquery.SourceFormat.CSV,
+        schema=schema,
+        skip_leading_rows=1,
+    )
+    load_job = client.load_table_from_uri(gcs_uri, table_ref, job_config=job_config)
+    load_job.result()
 
-    print("Uploaded data from storage into BigQuery")
+    print(f"Table {table_ref.table_id} created with {load_job.output_rows} rows.")

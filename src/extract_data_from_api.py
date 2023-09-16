@@ -4,9 +4,11 @@ import logging
 
 import pandas as pd
 import requests
+from utilities.google_cloud_utils import upload_data_to_google_storage
 from utilities.rawg_api_utils import (
-    initialize_arguements,
+    add_dates_to_dataframe,
     contains_non_english_chars,
+    initialize_arguements,
 )
 
 log = logging.getLogger(__name__)
@@ -33,7 +35,6 @@ def extract_all_data_from_response(
                 params["page"] += 1
             except (KeyError, ValueError):
                 break
-
     return all_data
 
 
@@ -77,5 +78,9 @@ def parse_data_from_response(response: list) -> pd.DataFrame:
 if __name__ == "__main__":
     url, params, dates = initialize_arguements()
     response = extract_all_data_from_response(url, params, dates)
-    data = parse_data_from_response(response)
+    raw_data = parse_data_from_response(response)
+    data = add_dates_to_dataframe(raw_data)
+    bucket_name = "rawg-data-pipeline-bucket"
+    blob_name = "test"
+    upload_data_to_google_storage(data, bucket_name, blob_name)
     print("Success.")

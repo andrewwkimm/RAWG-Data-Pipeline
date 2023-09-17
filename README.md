@@ -32,10 +32,11 @@ $ poetry init
 $ poetry install
 ```
 
-Set the environment variable for the API key in the terminal. You'll have to register in RAWG's site [here](https://rawg.io/apidocs).
+Set the environment variable for the API key in the terminal. You'll have to register in RAWG's site [here](https://rawg.io/apidocs). Do the same for the service account key after making an account with GCP.
 
 ```
 $ export API_KEY="enter-your-key-here"
+$ export SERVICE_KEY="gcp-service-key.json"
 ```
 
 Build out the infrastructure for Google Cloud Platform using Terraform. See [here](https://developer.hashicorp.com/terraform/downloads) for how to download based on your machine (I am using Debian).

@@ -5,13 +5,13 @@ A data pipeline I am working on made using RAWG's Database API to explore trends
 
 ![pipeline](images/architecture.png)
 
-The pipeline is orchestrated by Prefect in the following steps:
+The pipeline is orchestrated by Airflow in the following steps:
 1. The data is extracted and parsed from RAWG's API
 2. A connection to Google Storage is programmatically made to load the data into it
 3. Data modeling is done through dbt for use in Big Query
 4. Streamlit connects to BigQuery to and visualizes the data
 
-Terraform is used to manage the Google Cloud Platform infrastructure while Docker will containerize the above steps.
+Terraform is used to manage the Google Cloud Platform infrastructure while Docker will containerize the orchestration done by Airflow.
 
 CircleCI is used for CI/CD pipeline, ensuring that new code will not break the build and reflect the changes to Streamlit.
 

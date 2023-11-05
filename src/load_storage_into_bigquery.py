@@ -20,9 +20,11 @@ schema = [
     bigquery.SchemaField("week", "STRING"),
 ]
 project_id = "rawg-data-pipeline"
-dataset_id = "video_game_dataset"
-table_id = "video_game_data"
-gcs_uri = f"gs://{project_id}/{table_id}.csv"
+dataset_id = "rawg_staging_area"
+table_id = "rawg_staging_table"
+storage_bucket_name = "rawg-data-pipeline-bucket"
+storage_data_name = "video_game_data"
+gcs_uri = f"gs://{storage_bucket_name}/{storage_data_name}.csv"
 
 
 if __name__ == "__main__":

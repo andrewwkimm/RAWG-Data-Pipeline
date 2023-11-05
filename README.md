@@ -52,11 +52,13 @@ When you are done using the project, remember to destroy the infrastructure to a
 $ terraform destroy
 ```
 
-Orchestrate the tasks for the pipeline by deploying the Prefect flow. Prefect also provides a web UI to interact with its services.
+Orchestrate the tasks for the pipeline via Airflow. Airflow also provides a web UI to interact with its services.
+
 ```
-$ prefect deployment run 'elt/RAWG-Data-Pipeline'
-$ prefect server start # Opens Prefect web UI
+$ poetry run airflow webserver
+$ poetry run airflow scheduler
 ```
+
 Access the web app dashboard with Streamlit. It will source the data from the data models in BigQuery into your local setup.
 
 ```

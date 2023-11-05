@@ -6,7 +6,7 @@ WITH yearly_releases AS (
         year,
         COUNT(game_id) AS games_released
     FROM
-        video_game_dataset.video_game_data
+        rawg_staging_area.rawg_staging_table
     GROUP BY
         year
     ORDER BY
